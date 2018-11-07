@@ -6,9 +6,9 @@ class ScopeControllerTest extends TestCase
 {
     public function testShouldGetScopes()
     {
-        $controller = new \troojaan\Passport\Http\Controllers\ScopeController;
+        $controller = new \Laravel\Passport\Http\Controllers\ScopeController;
 
-        \troojaan\Passport\Passport::tokensCan($scopes = [
+        \Laravel\Passport\Passport::tokensCan($scopes = [
             'place-orders' => 'Place orders',
             'check-status' => 'Check order status',
         ]);
@@ -16,7 +16,7 @@ class ScopeControllerTest extends TestCase
         $result = $controller->all();
 
         $this->assertCount(2, $result);
-        $this->assertContainsOnlyInstancesOf(\troojaan\Passport\Scope::class, $result);
+        $this->assertContainsOnlyInstancesOf(\Laravel\Passport\Scope::class, $result);
         $this->assertSame(['id' => 'place-orders', 'description' => 'Place orders'], $result[0]->toArray());
         $this->assertSame(['id' => 'check-status', 'description' => 'Check order status'], $result[1]->toArray());
     }

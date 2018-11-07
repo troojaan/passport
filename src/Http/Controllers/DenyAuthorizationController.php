@@ -1,6 +1,6 @@
 <?php
 
-namespace troojaan\Passport\Http\Controllers;
+namespace Laravel\Passport\Http\Controllers;
 
 use Illuminate\Support\Arr;
 use Illuminate\Http\Request;

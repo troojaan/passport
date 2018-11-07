@@ -1,6 +1,6 @@
 <?php
 
-namespace troojaan\Passport;
+namespace Laravel\Passport;
 
 use Illuminate\Container\Container;
 
@@ -9,7 +9,7 @@ trait HasApiTokens
     /**
      * The current access token for the authentication user.
      *
-     * @var \troojaan\Passport\Token
+     * @var \Laravel\Passport\Token
      */
     protected $accessToken;
 
@@ -36,7 +36,7 @@ trait HasApiTokens
     /**
      * Get the current access token being used by the user.
      *
-     * @return \troojaan\Passport\Token|null
+     * @return \Laravel\Passport\Token|null
      */
     public function token()
     {
@@ -59,7 +59,7 @@ trait HasApiTokens
      *
      * @param  string  $name
      * @param  array  $scopes
-     * @return \troojaan\Passport\PersonalAccessTokenResult
+     * @return \Laravel\Passport\PersonalAccessTokenResult
      */
     public function createToken($name, array $scopes = [])
     {
@@ -71,7 +71,7 @@ trait HasApiTokens
     /**
      * Set the current access token for the user.
      *
-     * @param  \troojaan\Passport\Token  $accessToken
+     * @param  \Laravel\Passport\Token  $accessToken
      * @return $this
      */
     public function withAccessToken($accessToken)

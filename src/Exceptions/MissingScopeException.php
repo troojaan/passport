@@ -1,6 +1,6 @@
 <?php
 
-namespace troojaan\Passport\Exceptions;
+namespace Laravel\Passport\Exceptions;
 
 use Illuminate\Support\Arr;
 use Illuminate\Auth\Access\AuthorizationException;

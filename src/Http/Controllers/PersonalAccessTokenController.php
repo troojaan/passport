@@ -1,12 +1,12 @@
 <?php
 
-namespace troojaan\Passport\Http\Controllers;
+namespace Laravel\Passport\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use troojaan\Passport\Passport;
-use troojaan\Passport\TokenRepository;
-use troojaan\Passport\PersonalAccessTokenResult;
+use Laravel\Passport\Passport;
+use Laravel\Passport\TokenRepository;
+use Laravel\Passport\PersonalAccessTokenResult;
 use Illuminate\Contracts\Validation\Factory as ValidationFactory;
 
 class PersonalAccessTokenController
@@ -14,7 +14,7 @@ class PersonalAccessTokenController
     /**
      * The token repository implementation.
      *
-     * @var \troojaan\Passport\TokenRepository
+     * @var \Laravel\Passport\TokenRepository
      */
     protected $tokenRepository;
 
@@ -28,7 +28,7 @@ class PersonalAccessTokenController
     /**
      * Create a controller instance.
      *
-     * @param  \troojaan\Passport\TokenRepository  $tokenRepository
+     * @param  \Laravel\Passport\TokenRepository  $tokenRepository
      * @param  \Illuminate\Contracts\Validation\Factory  $validation
      * @return void
      */
@@ -57,7 +57,7 @@ class PersonalAccessTokenController
      * Create a new personal access token for the user.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \troojaan\Passport\PersonalAccessTokenResult
+     * @return \Laravel\Passport\PersonalAccessTokenResult
      */
     public function store(Request $request)
     {

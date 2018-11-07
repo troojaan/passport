@@ -1,6 +1,6 @@
 <?php
 
-namespace troojaan\Passport\Events;
+namespace Laravel\Passport\Events;
 
 class RefreshTokenCreated
 {

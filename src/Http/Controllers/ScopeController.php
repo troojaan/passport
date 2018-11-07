@@ -1,8 +1,8 @@
 <?php
 
-namespace troojaan\Passport\Http\Controllers;
+namespace Laravel\Passport\Http\Controllers;
 
-use troojaan\Passport\Passport;
+use Laravel\Passport\Passport;
 
 class ScopeController
 {

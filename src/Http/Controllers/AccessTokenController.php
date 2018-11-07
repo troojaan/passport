@@ -1,8 +1,8 @@
 <?php
 
-namespace troojaan\Passport\Http\Controllers;
+namespace Laravel\Passport\Http\Controllers;
 
-use troojaan\Passport\TokenRepository;
+use Laravel\Passport\TokenRepository;
 use Lcobucci\JWT\Parser as JwtParser;
 use Psr\Http\Message\ServerRequestInterface;
 use Zend\Diactoros\Response as Psr7Response;
@@ -22,7 +22,7 @@ class AccessTokenController
     /**
      * The token repository instance.
      *
-     * @var \troojaan\Passport\TokenRepository
+     * @var \Laravel\Passport\TokenRepository
      */
     protected $tokens;
 
@@ -37,7 +37,7 @@ class AccessTokenController
      * Create a new controller instance.
      *
      * @param  \League\OAuth2\Server\AuthorizationServer  $server
-     * @param  \troojaan\Passport\TokenRepository  $tokens
+     * @param  \Laravel\Passport\TokenRepository  $tokens
      * @param  \Lcobucci\JWT\Parser  $jwt
      * @return void
      */

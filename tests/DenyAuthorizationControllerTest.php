@@ -14,7 +14,7 @@ class DenyAuthorizationControllerTest extends TestCase
     {
         $response = Mockery::mock(ResponseFactory::class);
 
-        $controller = new troojaan\Passport\Http\Controllers\DenyAuthorizationController($response);
+        $controller = new Laravel\Passport\Http\Controllers\DenyAuthorizationController($response);
 
         $request = Mockery::mock('Illuminate\Http\Request');
 
@@ -43,7 +43,7 @@ class DenyAuthorizationControllerTest extends TestCase
     {
         $response = Mockery::mock(ResponseFactory::class);
 
-        $controller = new troojaan\Passport\Http\Controllers\DenyAuthorizationController($response);
+        $controller = new Laravel\Passport\Http\Controllers\DenyAuthorizationController($response);
 
         $request = Mockery::mock('Illuminate\Http\Request');
 
@@ -72,7 +72,7 @@ class DenyAuthorizationControllerTest extends TestCase
     {
         $response = Mockery::mock(ResponseFactory::class);
 
-        $controller = new troojaan\Passport\Http\Controllers\DenyAuthorizationController($response);
+        $controller = new Laravel\Passport\Http\Controllers\DenyAuthorizationController($response);
 
         $request = Mockery::mock('Illuminate\Http\Request');
 
@@ -101,7 +101,7 @@ class DenyAuthorizationControllerTest extends TestCase
     {
         $response = Mockery::mock(ResponseFactory::class);
 
-        $controller = new troojaan\Passport\Http\Controllers\DenyAuthorizationController($response);
+        $controller = new Laravel\Passport\Http\Controllers\DenyAuthorizationController($response);
 
         $request = Mockery::mock('Illuminate\Http\Request');
 
@@ -134,7 +134,7 @@ class DenyAuthorizationControllerTest extends TestCase
     {
         $response = Mockery::mock(ResponseFactory::class);
 
-        $controller = new troojaan\Passport\Http\Controllers\DenyAuthorizationController($response);
+        $controller = new Laravel\Passport\Http\Controllers\DenyAuthorizationController($response);
 
         $request = Mockery::mock('Illuminate\Http\Request');
 

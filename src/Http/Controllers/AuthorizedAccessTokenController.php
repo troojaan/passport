@@ -1,24 +1,24 @@
 <?php
 
-namespace troojaan\Passport\Http\Controllers;
+namespace Laravel\Passport\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use troojaan\Passport\TokenRepository;
+use Laravel\Passport\TokenRepository;
 
 class AuthorizedAccessTokenController
 {
     /**
      * The token repository implementation.
      *
-     * @var \troojaan\Passport\TokenRepository
+     * @var \Laravel\Passport\TokenRepository
      */
     protected $tokenRepository;
 
     /**
      * Create a new controller instance.
      *
-     * @param  \troojaan\Passport\TokenRepository  $tokenRepository
+     * @param  \Laravel\Passport\TokenRepository  $tokenRepository
      * @return void
      */
     public function __construct(TokenRepository $tokenRepository)

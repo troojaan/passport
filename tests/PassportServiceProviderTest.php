@@ -1,9 +1,9 @@
 <?php
 
-use troojaan\Passport\Passport;
+use Laravel\Passport\Passport;
 use PHPUnit\Framework\TestCase;
 use Illuminate\Config\Repository as Config;
-use troojaan\Passport\PassportServiceProvider;
+use Laravel\Passport\PassportServiceProvider;
 use Illuminate\Contracts\Foundation\Application as App;
 
 class PassportServiceProviderTest extends TestCase

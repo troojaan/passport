@@ -1,6 +1,6 @@
 <?php
 
-namespace troojaan\Passport\Bridge;
+namespace Laravel\Passport\Bridge;
 
 trait FormatsScopesForStorage
 {

@@ -1,19 +1,19 @@
 <?php
 
-namespace troojaan\Passport\Http\Middleware;
+namespace Laravel\Passport\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Response;
-use troojaan\Passport\Passport;
+use Laravel\Passport\Passport;
 use Illuminate\Http\JsonResponse;
-use troojaan\Passport\ApiTokenCookieFactory;
+use Laravel\Passport\ApiTokenCookieFactory;
 
 class CreateFreshApiToken
 {
     /**
      * The API token cookie factory instance.
      *
-     * @var \troojaan\Passport\ApiTokenCookieFactory
+     * @var \Laravel\Passport\ApiTokenCookieFactory
      */
     protected $cookieFactory;
 
@@ -27,7 +27,7 @@ class CreateFreshApiToken
     /**
      * Create a new middleware instance.
      *
-     * @param  \troojaan\Passport\ApiTokenCookieFactory  $cookieFactory
+     * @param  \Laravel\Passport\ApiTokenCookieFactory  $cookieFactory
      * @return void
      */
     public function __construct(ApiTokenCookieFactory $cookieFactory)

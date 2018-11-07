@@ -1,10 +1,10 @@
 <?php
 
-namespace troojaan\Passport\Http\Controllers;
+namespace Laravel\Passport\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use troojaan\Passport\ClientRepository;
+use Laravel\Passport\ClientRepository;
 use Illuminate\Contracts\Validation\Factory as ValidationFactory;
 
 class ClientController
@@ -12,7 +12,7 @@ class ClientController
     /**
      * The client repository instance.
      *
-     * @var \troojaan\Passport\ClientRepository
+     * @var \Laravel\Passport\ClientRepository
      */
     protected $clients;
 
@@ -26,7 +26,7 @@ class ClientController
     /**
      * Create a client controller instance.
      *
-     * @param  \troojaan\Passport\ClientRepository  $clients
+     * @param  \Laravel\Passport\ClientRepository  $clients
      * @param  \Illuminate\Contracts\Validation\Factory  $validation
      * @return void
      */
@@ -73,7 +73,7 @@ class ClientController
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  string  $clientId
-     * @return \Illuminate\Http\Response|\troojaan\Passport\Client
+     * @return \Illuminate\Http\Response|\Laravel\Passport\Client
      */
     public function update(Request $request, $clientId)
     {

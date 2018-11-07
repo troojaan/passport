@@ -1,6 +1,6 @@
 <?php
 
-namespace troojaan\Passport;
+namespace Laravel\Passport;
 
 use Mockery;
 use DateInterval;
@@ -87,28 +87,28 @@ class Passport
      *
      * @var string
      */
-    public static $authCodeModel = 'troojaan\Passport\AuthCode';
+    public static $authCodeModel = 'Laravel\Passport\AuthCode';
 
     /**
      * The client model class name.
      *
      * @var string
      */
-    public static $clientModel = 'troojaan\Passport\Client';
+    public static $clientModel = 'Laravel\Passport\Client';
 
     /**
      * The personal access client model class name.
      *
      * @var string
      */
-    public static $personalAccessClientModel = 'troojaan\Passport\PersonalAccessClient';
+    public static $personalAccessClientModel = 'Laravel\Passport\PersonalAccessClient';
 
     /**
      * The token model class name.
      *
      * @var string
      */
-    public static $tokenModel = 'troojaan\Passport\Token';
+    public static $tokenModel = 'Laravel\Passport\Token';
 
     /**
      * Indicates if Passport migrations will be run.
@@ -151,7 +151,7 @@ class Passport
 
         $defaultOptions = [
             'prefix' => 'oauth',
-            'namespace' => '\troojaan\Passport\Http\Controllers',
+            'namespace' => '\Laravel\Passport\Http\Controllers',
         ];
 
         $options = array_merge($defaultOptions, $options);
@@ -402,7 +402,7 @@ class Passport
     /**
      * Get a new auth code model instance.
      *
-     * @return \troojaan\Passport\AuthCode
+     * @return \Laravel\Passport\AuthCode
      */
     public static function authCode()
     {
@@ -433,7 +433,7 @@ class Passport
     /**
      * Get a new client model instance.
      *
-     * @return \troojaan\Passport\Client
+     * @return \Laravel\Passport\Client
      */
     public static function client()
     {
@@ -464,7 +464,7 @@ class Passport
     /**
      * Get a new personal access client model instance.
      *
-     * @return \troojaan\Passport\PersonalAccessClient
+     * @return \Laravel\Passport\PersonalAccessClient
      */
     public static function personalAccessClient()
     {
@@ -495,7 +495,7 @@ class Passport
     /**
      * Get a new personal access client model instance.
      *
-     * @return \troojaan\Passport\Token
+     * @return \Laravel\Passport\Token
      */
     public static function token()
     {

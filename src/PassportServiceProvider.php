@@ -1,6 +1,6 @@
 <?php
 
-namespace troojaan\Passport;
+namespace Laravel\Passport;
 
 use DateInterval;
 use Illuminate\Auth\RequestGuard;
@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\ServiceProvider;
-use troojaan\Passport\Guards\TokenGuard;
+use Laravel\Passport\Guards\TokenGuard;
 use League\OAuth2\Server\CryptKey;
 use League\OAuth2\Server\ResourceServer;
 use Illuminate\Config\Repository as Config;
@@ -18,9 +18,9 @@ use League\OAuth2\Server\AuthorizationServer;
 use League\OAuth2\Server\Grant\AuthCodeGrant;
 use League\OAuth2\Server\Grant\ImplicitGrant;
 use League\OAuth2\Server\Grant\PasswordGrant;
-use troojaan\Passport\Bridge\PersonalAccessGrant;
+use Laravel\Passport\Bridge\PersonalAccessGrant;
 use League\OAuth2\Server\Grant\RefreshTokenGrant;
-use troojaan\Passport\Bridge\RefreshTokenRepository;
+use Laravel\Passport\Bridge\RefreshTokenRepository;
 use League\OAuth2\Server\Grant\ClientCredentialsGrant;
 
 class PassportServiceProvider extends ServiceProvider
