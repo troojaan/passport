@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Passport;
+namespace troojaan\Passport;
 
 use Jenssegers\Mongodb\Eloquent\Model;
 
