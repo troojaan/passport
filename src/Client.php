@@ -1,17 +1,19 @@
 <?php
 
-namespace Laravel\Passport;
+namespace troojaan\Passport;
 
-use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\HybridRelations;
 
 class Client extends Model
 {
+    use HybridRelations;
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'oauth_clients';
+    protected $collection = 'oauth_clients';
 
     /**
      * The guarded attributes on the model.
@@ -35,11 +37,23 @@ class Client extends Model
      * @var array
      */
     protected $casts = [
-        'grant_types' => 'array',
+        'grant_types'            => 'array',
         'personal_access_client' => 'bool',
-        'password_client' => 'bool',
-        'revoked' => 'bool',
+        'password_client'        => 'bool',
+        'revoked'                => 'bool',
     ];
+
+    /**
+     * Get the user that the client belongs to.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo(
+            config('auth.providers.' . config('auth.guards.api.provider') . '.model')
+        );
+    }
 
     /**
      * Get all of the authentication codes for the client.

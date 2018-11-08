@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Passport;
+namespace troojaan\Passport;
 
 use DateInterval;
 use Illuminate\Auth\RequestGuard;
@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\ServiceProvider;
-use Laravel\Passport\Guards\TokenGuard;
+use troojaan\Passport\Guards\TokenGuard;
 use League\OAuth2\Server\CryptKey;
 use League\OAuth2\Server\ResourceServer;
 use Illuminate\Config\Repository as Config;
@@ -18,9 +18,9 @@ use League\OAuth2\Server\AuthorizationServer;
 use League\OAuth2\Server\Grant\AuthCodeGrant;
 use League\OAuth2\Server\Grant\ImplicitGrant;
 use League\OAuth2\Server\Grant\PasswordGrant;
-use Laravel\Passport\Bridge\PersonalAccessGrant;
+use troojaan\Passport\Bridge\PersonalAccessGrant;
 use League\OAuth2\Server\Grant\RefreshTokenGrant;
-use Laravel\Passport\Bridge\RefreshTokenRepository;
+use troojaan\Passport\Bridge\RefreshTokenRepository;
 use League\OAuth2\Server\Grant\ClientCredentialsGrant;
 
 class PassportServiceProvider extends ServiceProvider
@@ -40,11 +40,15 @@ class PassportServiceProvider extends ServiceProvider
             $this->registerMigrations();
 
             $this->publishes([
+                __DIR__.'/../database/migrations' => database_path('migrations'),
+            ], 'passport-migrations');
+
+            $this->publishes([
                 __DIR__.'/../resources/views' => base_path('resources/views/vendor/passport'),
             ], 'passport-views');
 
             $this->publishes([
-                __DIR__.'/../resources/assets/js/components' => base_path('resources/assets/js/components/passport'),
+                __DIR__.'/../resources/js/components' => base_path('resources/js/components/passport'),
             ], 'passport-components');
 
             $this->commands([
@@ -65,10 +69,6 @@ class PassportServiceProvider extends ServiceProvider
         if (Passport::$runsMigrations) {
             return $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         }
-
-        $this->publishes([
-            __DIR__.'/../database/migrations' => database_path('migrations'),
-        ], 'passport-migrations');
     }
 
     /**

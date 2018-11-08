@@ -1,10 +1,10 @@
 <?php
 
-namespace Laravel\Passport\Console;
+namespace troojaan\Passport\Console;
 
 use Illuminate\Console\Command;
-use Laravel\Passport\ClientRepository;
-use Laravel\Passport\PersonalAccessClient;
+use troojaan\Passport\ClientRepository;
+use troojaan\Passport\PersonalAccessClient;
 
 class ClientCommand extends Command
 {
@@ -29,7 +29,7 @@ class ClientCommand extends Command
     /**
      * Execute the console command.
      *
-     * @param  \Laravel\Passport\ClientRepository  $clients
+     * @param  \troojaan\Passport\ClientRepository  $clients
      * @return void
      */
     public function handle(ClientRepository $clients)
@@ -52,7 +52,7 @@ class ClientCommand extends Command
     /**
      * Create a new personal access client.
      *
-     * @param  \Laravel\Passport\ClientRepository  $clients
+     * @param  \troojaan\Passport\ClientRepository  $clients
      * @return void
      */
     protected function createPersonalClient(ClientRepository $clients)
@@ -74,7 +74,7 @@ class ClientCommand extends Command
     /**
      * Create a new password grant client.
      *
-     * @param  \Laravel\Passport\ClientRepository  $clients
+     * @param  \troojaan\Passport\ClientRepository  $clients
      * @return void
      */
     protected function createPasswordClient(ClientRepository $clients)
@@ -96,7 +96,7 @@ class ClientCommand extends Command
     /**
      * Create a authorization code client.
      *
-     * @param  \Laravel\Passport\ClientRepository  $clients
+     * @param  \troojaan\Passport\ClientRepository  $clients
      * @return void
      */
     protected function createAuthCodeClient(ClientRepository $clients)
@@ -126,7 +126,7 @@ class ClientCommand extends Command
     /**
      * Create a client credentials grant client.
      *
-     * @param  \Laravel\Passport\ClientRepository  $clients
+     * @param  \troojaan\Passport\ClientRepository  $clients
      * @return void
      */
     protected function createClientCredentialsClient(ClientRepository $clients)

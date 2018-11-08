@@ -1,17 +1,19 @@
 <?php
 
-namespace Laravel\Passport;
+namespace troojaan\Passport;
 
-use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\HybridRelations;
 
 class PersonalAccessClient extends Model
 {
+    use HybridRelations;
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'oauth_personal_access_clients';
+    protected $collection = 'oauth_personal_access_clients';
 
     /**
      * The guarded attributes on the model.

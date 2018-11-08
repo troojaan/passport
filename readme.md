@@ -13,7 +13,7 @@ Laravel Passport is an OAuth2 server and API authentication package that is simp
 
 ## Official Documentation
 
-Documentation for Passport can be found on the [Laravel website](http://laravel.com/docs/master/passport).
+Documentation for Passport can be found on the [Laravel website](https://laravel.com/docs/master/passport).
 
 ## Installation
 
@@ -34,4 +34,14 @@ Add this part to your project's composer.json file to install the pkg.
 
 ## License
 
-Laravel Passport is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+Laravel Passport is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Changes
+
+Adding support for MongoDB by replacing Illuminate\Model class with
+Jenssegers\Mongodb\Model class,
+Laravel-MongoDB documentation can be found [Here](https://github.com/jenssegers/laravel-mongodb).
+
+## Credit
+
+All credit goes to [Passport](https://github.com/laravel/passport) & [Laravel-MongoDB](https://github.com/jenssegers/laravel-mongodb) original contributors.
