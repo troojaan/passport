@@ -1,8 +1,8 @@
 <?php
 
-namespace Laravel\Passport\Bridge;
+namespace troojaan\Passport\Bridge;
 
-use Laravel\Passport\Passport;
+use troojaan\Passport\Passport;
 use Illuminate\Database\Connection;
 use League\OAuth2\Server\Entities\AuthCodeEntityInterface;
 use League\OAuth2\Server\Repositories\AuthCodeRepositoryInterface;

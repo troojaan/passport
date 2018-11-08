@@ -14,7 +14,7 @@ class BridgeAccessTokenRepositoryTest extends TestCase
     {
         $expiration = Carbon::now();
 
-        $tokenRepository = Mockery::mock('Laravel\Passport\TokenRepository');
+        $tokenRepository = Mockery::mock('troojaan\Passport\TokenRepository');
 
         $events = Mockery::mock('Illuminate\Contracts\Events\Dispatcher');
 
@@ -31,12 +31,12 @@ class BridgeAccessTokenRepositoryTest extends TestCase
 
         $events->shouldReceive('dispatch')->once();
 
-        $accessToken = new Laravel\Passport\Bridge\AccessToken(2, [new Laravel\Passport\Bridge\Scope('scopes')]);
+        $accessToken = new troojaan\Passport\Bridge\AccessToken(2, [new troojaan\Passport\Bridge\Scope('scopes')]);
         $accessToken->setIdentifier(1);
         $accessToken->setExpiryDateTime($expiration);
-        $accessToken->setClient(new Laravel\Passport\Bridge\Client('client-id', 'name', 'redirect'));
+        $accessToken->setClient(new troojaan\Passport\Bridge\Client('client-id', 'name', 'redirect'));
 
-        $repository = new Laravel\Passport\Bridge\AccessTokenRepository($tokenRepository, $events);
+        $repository = new troojaan\Passport\Bridge\AccessTokenRepository($tokenRepository, $events);
 
         $repository->persistNewAccessToken($accessToken);
     }

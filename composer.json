@@ -1,5 +1,5 @@
 {
-    "name": "laravel/passport",
+    "name": "troojaan/passport",
     "description": "Laravel Passport provides OAuth2 server support to Laravel.",
     "keywords": ["laravel", "passport", "oauth"],
     "license": "MIT",
@@ -37,7 +37,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Laravel\\Passport\\": "src/"
+            "troojaan\\Passport\\": "src/"
         }
     },
     "extra": {
@@ -46,7 +46,7 @@
         },
         "laravel": {
             "providers": [
-                "Laravel\\Passport\\PassportServiceProvider"
+                "troojaan\\Passport\\PassportServiceProvider"
             ]
         }
     },
