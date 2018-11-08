@@ -3,9 +3,11 @@
 namespace troojaan\Passport;
 
 use Jenssegers\Mongodb\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\HybridRelations;
 
 class Token extends Model
 {
+    use HybridRelations;
     /**
      * The database table used by the model.
      *
@@ -33,7 +35,7 @@ class Token extends Model
      * @var array
      */
     protected $casts = [
-        'scopes' => 'array',
+        'scopes'  => 'array',
         'revoked' => 'bool',
     ];
 
@@ -72,30 +74,30 @@ class Token extends Model
     {
         $provider = config('auth.guards.api.provider');
 
-        return $this->belongsTo(config('auth.providers.'.$provider.'.model'));
+        return $this->belongsTo(config('auth.providers.' . $provider . '.model'));
     }
 
     /**
      * Determine if the token has a given scope.
      *
-     * @param  string  $scope
+     * @param  string $scope
      * @return bool
      */
     public function can($scope)
     {
         return in_array('*', $this->scopes) ||
-               array_key_exists($scope, array_flip($this->scopes));
+            array_key_exists($scope, array_flip($this->scopes));
     }
 
     /**
      * Determine if the token is missing a given scope.
      *
-     * @param  string  $scope
+     * @param  string $scope
      * @return bool
      */
     public function cant($scope)
     {
-        return ! $this->can($scope);
+        return !$this->can($scope);
     }
 
     /**

@@ -3,9 +3,11 @@
 namespace troojaan\Passport;
 
 use Jenssegers\Mongodb\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\HybridRelations;
 
 class Client extends Model
 {
+    use HybridRelations;
     /**
      * The database table used by the model.
      *
@@ -35,10 +37,10 @@ class Client extends Model
      * @var array
      */
     protected $casts = [
-        'grant_types' => 'array',
+        'grant_types'            => 'array',
         'personal_access_client' => 'bool',
-        'password_client' => 'bool',
-        'revoked' => 'bool',
+        'password_client'        => 'bool',
+        'revoked'                => 'bool',
     ];
 
     /**
@@ -49,7 +51,7 @@ class Client extends Model
     public function user()
     {
         return $this->belongsTo(
-            config('auth.providers.'.config('auth.guards.api.provider').'.model')
+            config('auth.providers.' . config('auth.guards.api.provider') . '.model')
         );
     }
 
