@@ -1,8 +1,8 @@
 <?php
 
-namespace Laravel\Passport;
+namespace troojaan\Passport;
 
-use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\Model;
 
 class Client extends Model
 {
@@ -11,7 +11,7 @@ class Client extends Model
      *
      * @var string
      */
-    protected $table = 'oauth_clients';
+    protected $collection = 'oauth_clients';
 
     /**
      * The guarded attributes on the model.
@@ -40,6 +40,18 @@ class Client extends Model
         'password_client' => 'bool',
         'revoked' => 'bool',
     ];
+
+    /**
+     * Get the user that the client belongs to.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo(
+            config('auth.providers.'.config('auth.guards.api.provider').'.model')
+        );
+    }
 
     /**
      * Get all of the authentication codes for the client.

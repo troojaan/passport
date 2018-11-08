@@ -9,14 +9,14 @@ use troojaan\Passport\Exceptions\MissingScopeException;
 use League\OAuth2\Server\Exception\OAuthServerException;
 use Symfony\Bridge\PsrHttpMessage\Factory\DiactorosFactory;
 
-class CheckClientCredentials
+class CheckClientCredentialsForAnyScope
 {
     /**
      * The Resource Server instance.
      *
      * @var \League\OAuth2\Server\ResourceServer
      */
-    protected $server;
+    private $server;
 
     /**
      * Create a new middleware instance.
@@ -48,29 +48,33 @@ class CheckClientCredentials
             throw new AuthenticationException;
         }
 
-        $this->validateScopes($psr, $scopes);
+        if ($this->validateScopes($psr, $scopes)) {
+            return $next($request);
+        }
 
-        return $next($request);
+        throw new MissingScopeException($scopes);
     }
 
     /**
      * Validate the scopes on the incoming request.
      *
-     * @param  \Psr\Http\Message\ServerRequestInterface $psr
+     * @param  \Psr\Http\Message\ResponseInterface $psr
      * @param  array  $scopes
-     * @return void
+     * @return bool
      * @throws \troojaan\Passport\Exceptions\MissingScopeException
      */
     protected function validateScopes($psr, $scopes)
     {
         if (in_array('*', $tokenScopes = $psr->getAttribute('oauth_scopes'))) {
-            return;
+            return true;
         }
 
         foreach ($scopes as $scope) {
-            if (! in_array($scope, $tokenScopes)) {
-                throw new MissingScopeException($scope);
+            if (in_array($scope, $tokenScopes)) {
+                return true;
             }
         }
+
+        return false;
     }
 }

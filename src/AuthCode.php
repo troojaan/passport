@@ -1,8 +1,8 @@
 <?php
 
-namespace Laravel\Passport;
+namespace troojaan\Passport;
 
-use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\Model;
 
 class AuthCode extends Model
 {
@@ -11,7 +11,7 @@ class AuthCode extends Model
      *
      * @var string
      */
-    protected $table = 'oauth_auth_codes';
+    protected $collection = 'oauth_auth_codes';
 
     /**
      * The guarded attributes on the model.
@@ -37,6 +37,13 @@ class AuthCode extends Model
     protected $dates = [
         'expires_at',
     ];
+
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
 
     /**
      * Get the client that owns the authentication code.

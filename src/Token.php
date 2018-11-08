@@ -1,8 +1,8 @@
 <?php
 
-namespace Laravel\Passport;
+namespace troojaan\Passport;
 
-use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\Model;
 
 class Token extends Model
 {
@@ -11,7 +11,7 @@ class Token extends Model
      *
      * @var string
      */
-    protected $table = 'oauth_access_tokens';
+    protected $collection = 'oauth_access_tokens';
 
     /**
      * Indicates if the IDs are auto-incrementing.
