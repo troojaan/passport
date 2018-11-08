@@ -3,9 +3,11 @@
 namespace troojaan\Passport;
 
 use Jenssegers\Mongodb\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\HybridRelations;
 
 class PersonalAccessClient extends Model
 {
+    use HybridRelations;
     /**
      * The database table used by the model.
      *
